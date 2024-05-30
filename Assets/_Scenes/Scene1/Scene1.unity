@@ -40142,7 +40142,7 @@ GameObject:
   - component: {fileID: 1022798935}
   - component: {fileID: 1022798934}
   - component: {fileID: 1022798933}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
