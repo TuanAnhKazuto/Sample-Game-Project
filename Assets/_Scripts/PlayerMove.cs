@@ -146,11 +146,11 @@ public class PlayerMove : MonoBehaviour
             }
         }
 
-        if (rb.velocity.x > 0 && !facingRight)
+        if (MovingInPut > 0 && !facingRight)
         {
             Flip();
         }
-        else if (rb.velocity.x < 0 && facingRight)
+        else if (MovingInPut < 0 && facingRight)
         {
             Flip();
         }
