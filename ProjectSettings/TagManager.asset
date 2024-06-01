@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ground
   - Enemy
+  - Coin
+  - Trap
+  - Ladder
   layers:
   - Default
   - TransparentFX
@@ -46,6 +49,9 @@ TagManager:
   - name: BackGround
     uniqueID: 2132033567
     locked: 0
+  - name: Trap
+    uniqueID: 4092128731
+    locked: 0
   - name: Platform
     uniqueID: 173708811
     locked: 0
@@ -54,6 +60,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2595296719
+    locked: 0
+  - name: Coin
+    uniqueID: 1065012215
     locked: 0
   - name: Enemy
     uniqueID: 1517851141
