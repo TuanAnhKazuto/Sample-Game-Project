@@ -16,16 +16,20 @@ public class PlayerMove : MonoBehaviour
 
     private bool canDoubleJump ;
     private bool canWallslide;
+    private bool canWallJump = true;
     private bool isWallSliding;
    
     private bool facingRight = true;
     private float MovingInPut;
+    private int facingDirection = 1;
+    [SerializeField] private Vector2 wallJumpDirection;
 
     [Header("Ground collision info")]
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundCheckRadius;
     [SerializeField] private LayerMask WhatIsGround;
                      private bool isGround;
+
     [Header("Wall collision info")]
     [SerializeField] private Transform wallCheck;
     [SerializeField] private float wallCheckDistance;
@@ -41,36 +45,30 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       CheckInput();
-
-        
-
+        CheckInput();
         CollisionCheck();
         FlipController();
         AnimatorController();
     }
-
-    private void Jump()
-    {
-        
-        
-        rb.velocity = new Vector2(rb.velocity.x, JumpForce);
-    }
-
-
     private void FixedUpdate()
     {
         if (isGround)
         {
+            canMove = true;
             canDoubleJump = true;
+        }
+
+        if(Input.GetAxis("Vertical") < 0)
+        {
+            canWallslide = false;
         }
 
         if (isWallDetected && canWallslide)
         {
             isWallSliding = true;
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y *0.2f);
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.2f);
         }
-        else
+        else if (!isWallDetected)
         {
             isWallSliding = false;
             Move();
@@ -84,6 +82,7 @@ public class PlayerMove : MonoBehaviour
         {
             JumpButton();
         }
+
         if (canMove)
         {
             MovingInPut = Input.GetAxis("Horizontal");
@@ -98,18 +97,38 @@ public class PlayerMove : MonoBehaviour
     }
     private void JumpButton()
     {
-        if (isGround)
+        if (isWallSliding && canWallJump)
+        {
+            WallJump();
+        }
+        else if (isGround)
         {
             Jump();
         }
         else if (canDoubleJump)
         {
+            canMove = true;
             canDoubleJump = false;
             Jump();
         }
+
+        canWallslide = false;
+    }
+    private void Jump()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, JumpForce);
+    }
+    private void WallJump()
+    {
+        canMove = false;
+
+        Vector2 direction = new Vector2(wallJumpDirection.x * -facingDirection, wallJumpDirection.y);
+
+        rb.AddForce(direction, ForceMode2D.Impulse);
     }
     private void Flip()
     {
+        facingDirection = facingDirection * -1;
         facingRight = !facingRight;
         transform.Rotate(0, 180, 0);
     }
@@ -127,11 +146,11 @@ public class PlayerMove : MonoBehaviour
             }
         }
 
-        if (rb.velocity.x > 0 && !facingRight)
+        if (MovingInPut > 0 && !facingRight)
         {
             Flip();
         }
-        else if (rb.velocity.x < 0 && facingRight)
+        else if (MovingInPut < 0 && facingRight)
         {
             Flip();
         }
