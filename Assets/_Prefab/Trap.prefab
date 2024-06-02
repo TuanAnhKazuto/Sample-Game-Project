@@ -291,9 +291,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2881566769350283474}
+  - component: {fileID: 1917792035482510516}
   m_Layer: 0
-  m_Name: Trap_Idle
-  m_TagString: Untagged
+  m_Name: Trap
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -316,6 +317,21 @@ Transform:
   - {fileID: 8650706900871744349}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1917792035482510516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7944842791622061035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ca9d22366cbbf409e6f57ce1d6f531, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  top: 11.36
+  bottom: 10.34
 --- !u!1 &8681060098757468833
 GameObject:
   m_ObjectHideFlags: 0
