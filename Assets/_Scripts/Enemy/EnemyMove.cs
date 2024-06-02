@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float jumpHight = 5f;
+    [SerializeField] private float moveSpeed = 3f;
+    [SerializeField] private float jumpHight = 2.5f;
     [SerializeField] private float left;
     [SerializeField] private float right;
     private int moveDiretion = 1;
