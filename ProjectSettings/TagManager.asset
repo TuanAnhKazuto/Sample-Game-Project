@@ -5,24 +5,21 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - Enemy
-<<<<<<< HEAD
-  - lander
-=======
   - Coin
+  - Enemy
   - Trap
+  - lander
   - Ladder
->>>>>>> a35f1cc8127f248cf64c3db3ac99a0bf3bcaf099
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - Player
-  - Ground
-  - Climbing
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -51,31 +48,23 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: BackGround
-    uniqueID: 2132033567
-    locked: 0
-  - name: Trap
-    uniqueID: 4092128731
+    uniqueID: 1829568243
     locked: 0
   - name: Platform
-    uniqueID: 173708811
+    uniqueID: 124276405
     locked: 0
   - name: Water
-    uniqueID: 2810250985
+    uniqueID: 1739801035
     locked: 0
   - name: Player
-    uniqueID: 2595296719
+    uniqueID: 1631565109
     locked: 0
-  - name: Coin
-    uniqueID: 1065012215
+  - name: Item
+    uniqueID: 288210029
     locked: 0
   - name: Enemy
-    uniqueID: 1517851141
+    uniqueID: 1039503311
     locked: 0
-<<<<<<< HEAD
-  - name: Climbing
-    uniqueID: 2449845377
-=======
   - name: UI
-    uniqueID: 2337396909
->>>>>>> a35f1cc8127f248cf64c3db3ac99a0bf3bcaf099
+    uniqueID: 3010690257
     locked: 0
