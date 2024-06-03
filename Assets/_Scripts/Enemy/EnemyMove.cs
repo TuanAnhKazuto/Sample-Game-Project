@@ -27,7 +27,14 @@ public class EnemyMove : MonoBehaviour
             scale.x = -1;
         }
         transform.localScale = scale;
-    }
 
+    }
+    private void OnTriggerEnter2D(Collider2D Touch)
+    {
+        if (Touch.CompareTag("Player"))
+        {
+            Destroy(Touch.gameObject);
+        }
+    }
 
 }
