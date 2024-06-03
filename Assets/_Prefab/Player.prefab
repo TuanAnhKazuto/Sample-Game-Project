@@ -138,8 +138,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1631565109
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -573874233, guid: 3e51ef91e51ca62458b6abc2af3adde1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -166,6 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 6761298458119073722}
   rb: {fileID: 7037808160194997065}
+  _capsuleCollider2D: {fileID: 0}
   MoveSpeed: 7
   JumpForce: 10
   wallJumpDirection: {x: 3, y: 7}
@@ -173,7 +174,7 @@ MonoBehaviour:
   groundCheckRadius: 0.3
   WhatIsGround:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   wallCheck: {fileID: 8952068386951550941}
   wallCheckDistance: 0.3
 --- !u!70 &3087058237117960550
