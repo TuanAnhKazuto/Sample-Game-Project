@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Enemy
   - lander
+  - Ground
+  - Coin
+  - Trap
+  - Ladder
   layers:
   - Default
   - TransparentFX
@@ -42,4 +46,28 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BackGround
+    uniqueID: 1212584809
+    locked: 0
+  - name: Platform
+    uniqueID: 2315025287
+    locked: 0
+  - name: Water
+    uniqueID: 2664807089
+    locked: 0
+  - name: Gate
+    uniqueID: 4175440473
+    locked: 0
+  - name: Player
+    uniqueID: 1055596135
+    locked: 0
+  - name: Enemy
+    uniqueID: 2446676391
+    locked: 0
+  - name: Item
+    uniqueID: 242293419
+    locked: 0
+  - name: UI
+    uniqueID: 750177579
     locked: 0
