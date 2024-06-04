@@ -14,7 +14,10 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] public float MoveSpeed = 5f;
     [SerializeField] private float JumpForce = 7f;
 
+    private bool isShoot;
+
     private bool climbing;
+
     private bool canMove = true;
     private bool canDoubleJump;
     private bool canWallslide;
@@ -58,7 +61,7 @@ public class PlayerMove : MonoBehaviour
         FlipController();
         AnimatorController();
         HandleClimbing();
-        Shoot();
+        
     }
 
     private void FixedUpdate()
@@ -75,6 +78,8 @@ public class PlayerMove : MonoBehaviour
         {
             canMove = true;
             canDoubleJump = true;
+            canWallJump = true;
+            canWallslide = false;
         }
 
         if (Input.GetAxis("Vertical") < 0)
@@ -109,6 +114,10 @@ public class PlayerMove : MonoBehaviour
         if (canMove)
         {
             MovingInput = Input.GetAxis("Horizontal");
+        }   
+        if (Input.GetKeyDown(KeyCode.F) && isGround)
+        {
+            ShootButton();
         }
     }
 
@@ -156,13 +165,15 @@ public class PlayerMove : MonoBehaviour
         canMove = false;
         Vector2 direction = new Vector2(wallJumpDirection.x * -facingDirection, wallJumpDirection.y);
         rb.AddForce(direction, ForceMode2D.Impulse);
+        canWallJump = false;
     }
 
     private void Flip()
     {
-        facingDirection *= -1;
         facingRight = !facingRight;
-        transform.Rotate(0, 180, 0);
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
     }
 
     private void FlipController()
@@ -171,7 +182,7 @@ public class PlayerMove : MonoBehaviour
         {
             if (facingRight && MovingInput < 0)
             {
-                Flip();
+                Flip(); 
             }
             else if (!facingRight && MovingInput > 0)
             {
@@ -198,6 +209,7 @@ public class PlayerMove : MonoBehaviour
         anim.SetBool("isMoving", isMoving);
         anim.SetBool("isWallSliding", isWallSliding);
         anim.SetBool("isClimbing", climbing); // Ensure climbing state is set
+        anim.SetBool("isShoot", isShoot);
     }
 
     private void CollisionCheck()
@@ -248,15 +260,22 @@ public class PlayerMove : MonoBehaviour
             rb.velocity = new Vector3(leothang * 1f, leothang2 * 3f, 0);
         }
     }
-    private void Shoot()
+    private void ShootButton()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            GameObject arrow = Instantiate(arrowPrefab, arrowTransform.position, Quaternion.identity);
-            Arrow arrowScript = arrow.GetComponent<Arrow>();
-            arrowScript.Initialize(facingRight);
-            int direction = facingRight ? 1 : -1;
-            arrow.GetComponent<Rigidbody2D>().velocity = new Vector2(arrowSpeed * direction, 0);
-        }
+        isShoot = true;
+        GameObject arrow = Instantiate(arrowPrefab, arrowTransform.position, Quaternion.identity);
+        Arrow arrowScript = arrow.GetComponent<Arrow>();
+        arrowScript.Initialize(facingRight);
+        int direction = facingRight ? 1 : -1;
+        arrow.GetComponent<Rigidbody2D>().velocity = new Vector2(arrowSpeed * direction, 0);
+
+        // Reset isShoot after a short delay
+        StartCoroutine(ResetShoot());
+    }
+
+    private IEnumerator ResetShoot()
+    {
+        yield return new WaitForSeconds(1f); // Adjust the delay as needed
+        isShoot = false;
     }
 }

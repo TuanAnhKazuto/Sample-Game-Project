@@ -35,10 +35,5 @@ public class EnemyMove : MonoBehaviour
         {
             Destroy(Touch.gameObject);
         }
-        if (Touch.CompareTag("Arrow"))
-        {
-            Destroy(this.gameObject);
-        }
     }
-
 }
