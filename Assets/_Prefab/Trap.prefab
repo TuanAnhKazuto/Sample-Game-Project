@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3982698007939450103}
   m_Layer: 0
   m_Name: Spikes_1 (1)
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 1656611004876966771}
   m_Layer: 0
   m_Name: Spikes_1
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 207766762598555687}
   m_Layer: 0
   m_Name: Spikes_1 (2)
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
