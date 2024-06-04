@@ -104,7 +104,6 @@ GameObject:
   - component: {fileID: 6338111690692910293}
   - component: {fileID: 5732638475508552354}
   - component: {fileID: 7682545100236746082}
-  - component: {fileID: 6289303914323276063}
   - component: {fileID: 3087058237117960550}
   - component: {fileID: 6761298458119073722}
   - component: {fileID: 7037808160194997065}
@@ -210,20 +209,8 @@ MonoBehaviour:
     m_Bits: 0
   wallCheck: {fileID: 8952068386951550941}
   wallCheckDistance: 0.3
---- !u!114 &6289303914323276063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8681032253618074845}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a675be4dbd39840b69010f19ba2899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arrowTransform: {fileID: 5412203018887151373}
-  arrowPrefab: {fileID: 3659966676212872304, guid: 837dd518e9bfbfe4eba68f993b9b81d9, type: 3}
+  arrowTransform: {fileID: 0}
+  arrowPrefab: {fileID: 0}
   arrowSpeed: 25
 --- !u!70 &3087058237117960550
 CapsuleCollider2D:

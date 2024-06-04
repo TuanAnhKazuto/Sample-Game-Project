@@ -36,6 +36,11 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float wallCheckDistance;
     private bool isWallDetected;
 
+    [Header("Shooting Info")]
+    [SerializeField] private Transform arrowTransform;
+    [SerializeField] private GameObject arrowPrefab;
+    [SerializeField] private float arrowSpeed = 25f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,8 +57,8 @@ public class PlayerMove : MonoBehaviour
         CollisionCheck();
         FlipController();
         AnimatorController();
-
         HandleClimbing();
+        Shoot();
     }
 
     private void FixedUpdate()
@@ -87,7 +92,7 @@ public class PlayerMove : MonoBehaviour
             isWallSliding = false;
             Move();
         }
-    }   
+    }
 
     private void CheckInput()
     {
@@ -241,6 +246,17 @@ public class PlayerMove : MonoBehaviour
             var leothang = Input.GetAxisRaw("Horizontal");
             var leothang2 = Input.GetAxisRaw("Vertical");
             rb.velocity = new Vector3(leothang * 1f, leothang2 * 3f, 0);
+        }
+    }
+    private void Shoot()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            GameObject arrow = Instantiate(arrowPrefab, arrowTransform.position, Quaternion.identity);
+            Arrow arrowScript = arrow.GetComponent<Arrow>();
+            arrowScript.Initialize(facingRight);
+            int direction = facingRight ? 1 : -1;
+            arrow.GetComponent<Rigidbody2D>().velocity = new Vector2(arrowSpeed * direction, 0);
         }
     }
 }
