@@ -129651,18 +129651,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3087058237117960550, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
-      propertyPath: m_Size.y
-      value: 0.96975803
-      objectReference: {fileID: 0}
-    - target: {fileID: 3087058237117960550, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.014433235
-      objectReference: {fileID: 0}
-    - target: {fileID: 3087058237117960550, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.047379017
-      objectReference: {fileID: 0}
     - target: {fileID: 6338111690692910293, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
       propertyPath: m_LocalPosition.x
       value: 62.4
@@ -129703,6 +129691,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7682545100236746082, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
+      propertyPath: arrowPrefab
+      value: 
+      objectReference: {fileID: 3659966676212872304, guid: 837dd518e9bfbfe4eba68f993b9b81d9, type: 3}
+    - target: {fileID: 7682545100236746082, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
+      propertyPath: arrowTransform
+      value: 
+      objectReference: {fileID: 1934471393}
     - target: {fileID: 8681032253618074845, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
       propertyPath: m_Name
       value: Player
@@ -131436,6 +131432,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2487031924308203442, guid: 883085318ab72ef4c8752b92d030a4fe, type: 3}
   m_PrefabInstance: {fileID: 1925729434}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1934471393 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5412203018887151373, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
+  m_PrefabInstance: {fileID: 1848789222}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1936786192
 PrefabInstance:
