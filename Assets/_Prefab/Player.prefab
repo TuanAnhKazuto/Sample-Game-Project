@@ -62,6 +62,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6338111690692910293}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7998518466615656006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5412203018887151373}
+  m_Layer: 6
+  m_Name: ShootingTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5412203018887151373
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7998518466615656006}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.73, y: -0.02, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6338111690692910293}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8681032253618074845
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,6 +104,7 @@ GameObject:
   - component: {fileID: 6338111690692910293}
   - component: {fileID: 5732638475508552354}
   - component: {fileID: 7682545100236746082}
+  - component: {fileID: 6289303914323276063}
   - component: {fileID: 3087058237117960550}
   - component: {fileID: 6761298458119073722}
   - component: {fileID: 7037808160194997065}
@@ -98,6 +130,7 @@ Transform:
   m_Children:
   - {fileID: 4893221067764155253}
   - {fileID: 8952068386951550941}
+  - {fileID: 5412203018887151373}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5732638475508552354
@@ -177,6 +210,21 @@ MonoBehaviour:
     m_Bits: 0
   wallCheck: {fileID: 8952068386951550941}
   wallCheckDistance: 0.3
+--- !u!114 &6289303914323276063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8681032253618074845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a675be4dbd39840b69010f19ba2899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowTransform: {fileID: 5412203018887151373}
+  arrowPrefab: {fileID: 3659966676212872304, guid: 837dd518e9bfbfe4eba68f993b9b81d9, type: 3}
+  arrowSpeed: 25
 --- !u!70 &3087058237117960550
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -209,8 +257,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.014433244, y: 0}
-  m_Size: {x: 0.5668614, y: 0.875}
+  m_Offset: {x: -0.014433235, y: -0.047379017}
+  m_Size: {x: 0.5668614, y: 0.96975803}
   m_Direction: 0
 --- !u!95 &6761298458119073722
 Animator:
