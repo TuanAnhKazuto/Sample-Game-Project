@@ -4560,14 +4560,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 790034557337556620, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2540805772765401614, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 4893221067764155253, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.36
@@ -4613,10 +4605,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7682545100236746082, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
-      propertyPath: RollTime
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7682545100236746082, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
       propertyPath: arrowSpeed
       value: 5
       objectReference: {fileID: 0}
@@ -4642,14 +4630,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8681032253618074845, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
       propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8681032253618074845, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8681032253618074845, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
-      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8952068386951550941, guid: ba8a922bbef9392499426b7f226a6574, type: 3}

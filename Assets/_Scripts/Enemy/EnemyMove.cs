@@ -31,8 +31,15 @@ public class EnemyMove : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D Touch)
     {
+<<<<<<< HEAD
         if (Touch.CompareTag("Player"))
         {
+=======
+  
+        if (Touch.CompareTag("Arrow"))
+        {
+            Destroy(this.gameObject);
+>>>>>>> c6981ec171e6f868151deae450042f0ea826a01b
             Destroy(Touch.gameObject);
         }
     }

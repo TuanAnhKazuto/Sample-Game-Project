@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -47,6 +47,10 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //thêm sài tạm
+        Time.timeScale = 1.0f;
+
+
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         _capsuleCollider2D = GetComponent<CapsuleCollider2D>();
@@ -106,7 +110,7 @@ public class PlayerMove : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             JumpButton();
         }
@@ -249,6 +253,13 @@ public class PlayerMove : MonoBehaviour
             climbing = false;
             anim.SetBool("isClimbing", false);
         }
+
+        //thêm vào để sài tạm
+        if (collision.gameObject.tag == "Trap")
+        {
+            Destroy(this.gameObject);
+            Time.timeScale = 0;
+        }
     }
 
     private void HandleClimbing()
@@ -277,5 +288,15 @@ public class PlayerMove : MonoBehaviour
     {
         yield return new WaitForSeconds(1f); // Adjust the delay as needed
         isShoot = false;
+    }
+
+    //thêm vào để sài tạm
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Enemy")
+        {
+            Destroy(this.gameObject);
+            Time.timeScale = 0;
+        }
     }
 }
