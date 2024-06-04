@@ -15,17 +15,22 @@ public class BossSlime : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             seenPlayer = true;
+            BossAttack();
         }
     }
 
     public void BossAttack()
     {
-        GameObject bullet = Instantiate(bulletPrefab, bulletTransform.position, Quaternion.identity);
-        bullet.GetComponent<Rigidbody2D>().velocity = bulletTransform.right * bullletSpeed;
+        if(seenPlayer)
+        {
+            GameObject bullet = Instantiate(bulletPrefab, bulletTransform.position, Quaternion.identity);
+            bullet.GetComponent<Rigidbody2D>().velocity = bulletTransform.right * bullletSpeed * -1;
+
+        }
 
     }
 
-    IEnumerator FireDelay()
+    /*IEnumerator FireDelay()
     {
         do
         {
@@ -33,5 +38,5 @@ public class BossSlime : MonoBehaviour
             yield return new WaitForSeconds(0.3f);
 
         } while (true);
-    }
+    }*/
 }
