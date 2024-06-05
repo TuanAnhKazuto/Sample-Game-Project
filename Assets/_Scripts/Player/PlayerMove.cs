@@ -14,7 +14,10 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] public float MoveSpeed = 5f;
     [SerializeField] private float JumpForce = 7f;
 
+    private bool isShoot;
+
     private bool climbing;
+
     private bool canMove = true;
     private bool canDoubleJump;
     private bool canWallslide;
@@ -62,9 +65,10 @@ public class PlayerMove : MonoBehaviour
         FlipController();
         AnimatorController();
         HandleClimbing();
-        Shoot();
+        
     }
 
+    //Xử lí các cập nhật đến vật lý của Player
     private void FixedUpdate()
     {
         if (climbing)
@@ -79,6 +83,8 @@ public class PlayerMove : MonoBehaviour
         {
             canMove = true;
             canDoubleJump = true;
+            canWallJump = true;
+            canWallslide = false;
         }
 
         if (Input.GetAxis("Vertical") < 0)
@@ -97,7 +103,8 @@ public class PlayerMove : MonoBehaviour
             Move();
         }
     }
-
+    
+    //kiểm tra những InPut
     private void CheckInput()
     {
         if (climbing)
@@ -105,7 +112,7 @@ public class PlayerMove : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             JumpButton();
         }
@@ -113,9 +120,14 @@ public class PlayerMove : MonoBehaviour
         if (canMove)
         {
             MovingInput = Input.GetAxis("Horizontal");
+        }   
+        if (Input.GetKeyDown(KeyCode.F) && isGround)
+        {
+            ShootButton();
         }
     }
 
+    //điều kiện canMove để thực hiện di chuyển player
     private void Move()
     {
         if (canMove)
@@ -124,6 +136,7 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    //Các điều kiện để thực hiện nhảy
     private void JumpButton()
     {
         if (climbing)
@@ -150,32 +163,38 @@ public class PlayerMove : MonoBehaviour
         canWallslide = false;
     }
 
+    //code nhảy
     private void Jump()
     {
         rb.velocity = new Vector2(rb.velocity.x, JumpForce);
     }
 
+    //code nhảy tường 
     private void WallJump()
     {
         canMove = false;
         Vector2 direction = new Vector2(wallJumpDirection.x * -facingDirection, wallJumpDirection.y);
         rb.AddForce(direction, ForceMode2D.Impulse);
+        canWallJump = false;
     }
 
+    //Quay mặt Player
     private void Flip()
     {
-        facingDirection *= -1;
         facingRight = !facingRight;
-        transform.Rotate(0, 180, 0);
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
     }
 
+    //Xử lí điều khiển quay mặt player
     private void FlipController()
     {
         if (!climbing && isGround && isWallDetected)
         {
             if (facingRight && MovingInput < 0)
             {
-                Flip();
+                Flip(); 
             }
             else if (!facingRight && MovingInput > 0)
             {
@@ -193,15 +212,17 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    //kiểm soát các animator qua code 
     private void AnimatorController()
     {
         bool isMoving = rb.velocity.x != 0;
 
         anim.SetFloat("yVelocity", rb.velocity.y);
-        anim.SetBool("isGrounded", isGround && !climbing); // Ensure grounded only if not climbing
-        anim.SetBool("isMoving", isMoving);
-        anim.SetBool("isWallSliding", isWallSliding);
+        anim.SetBool("isGrounded", isGround && !climbing); // đảm bảo chỉ tiếp đất nếu không leo
+        anim.SetBool("isMoving", isMoving);//set chạy animation
+        anim.SetBool("isWallSliding", isWallSliding);//set sìa tường animation
         anim.SetBool("isClimbing", climbing); // Ensure climbing state is set
+        anim.SetBool("isShoot", isShoot);//set bắn tên animation
     }
 
     private void CollisionCheck()
@@ -223,6 +244,7 @@ public class PlayerMove : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //chạy animation leo thang 
         if (collision.CompareTag("lander"))
         {
             rb.gravityScale = 0;
@@ -235,6 +257,7 @@ public class PlayerMove : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        
         if (collision.CompareTag("lander"))
         {
             rb.gravityScale = gravityScaleAtStart;
@@ -252,15 +275,22 @@ public class PlayerMove : MonoBehaviour
             rb.velocity = new Vector3(leothang * 1f, leothang2 * 3f, 0);
         }
     }
-    private void Shoot()
+    private void ShootButton()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            GameObject arrow = Instantiate(arrowPrefab, arrowTransform.position, Quaternion.identity);
-            Arrow arrowScript = arrow.GetComponent<Arrow>();
-            arrowScript.Initialize(facingRight);
-            int direction = facingRight ? 1 : -1;
-            arrow.GetComponent<Rigidbody2D>().velocity = new Vector2(arrowSpeed * direction, 0);
-        }
+        isShoot = true;
+        GameObject arrow = Instantiate(arrowPrefab, arrowTransform.position, Quaternion.identity);
+        Arrow arrowScript = arrow.GetComponent<Arrow>();
+        arrowScript.Initialize(facingRight);
+        int direction = facingRight ? 1 : -1;
+        arrow.GetComponent<Rigidbody2D>().velocity = new Vector2(arrowSpeed * direction, 0);
+
+        // Reset isShoot after a short delay
+        StartCoroutine(ResetShoot());
+    }
+
+    private IEnumerator ResetShoot()
+    {
+        yield return new WaitForSeconds(1f); // Adjust the delay as needed
+        isShoot = false;
     }
 }
