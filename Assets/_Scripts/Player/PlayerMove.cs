@@ -112,7 +112,7 @@ public class PlayerMove : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             JumpButton();
         }
@@ -264,13 +264,6 @@ public class PlayerMove : MonoBehaviour
             climbing = false;
             anim.SetBool("isClimbing", false);
         }
-
-        //thêm vào để sài tạm
-        if (collision.gameObject.tag == "Trap")
-        {
-            Destroy(this.gameObject);
-            Time.timeScale = 0;
-        }
     }
 
     private void HandleClimbing()
@@ -299,15 +292,5 @@ public class PlayerMove : MonoBehaviour
     {
         yield return new WaitForSeconds(1f); // Adjust the delay as needed
         isShoot = false;
-    }
-
-    //thêm vào để sài tạm
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag == "Enemy")
-        {
-            Destroy(this.gameObject);
-            Time.timeScale = 0;
-        }
     }
 }
