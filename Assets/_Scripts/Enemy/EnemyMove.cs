@@ -31,15 +31,10 @@ public class EnemyMove : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D Touch)
     {
-
-        if (Touch.CompareTag("Player"))
+        if (Touch.CompareTag("Arrow"))
         {
-
-            if (Touch.CompareTag("Arrow"))
-            {
-                Destroy(this.gameObject);
-                Destroy(Touch.gameObject);
-            }
+            Destroy(this.gameObject);
+            Destroy(Touch.gameObject);
         }
     }
 }

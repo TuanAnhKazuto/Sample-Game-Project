@@ -68,6 +68,7 @@ public class PlayerMove : MonoBehaviour
         
     }
 
+    //Xử lí các cập nhật đến vật lý của Player
     private void FixedUpdate()
     {
         if (climbing)
@@ -102,7 +103,8 @@ public class PlayerMove : MonoBehaviour
             Move();
         }
     }
-
+    
+    //kiểm tra những InPut
     private void CheckInput()
     {
         if (climbing)
@@ -125,6 +127,7 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    //điều kiện canMove để thực hiện di chuyển player
     private void Move()
     {
         if (canMove)
@@ -133,6 +136,7 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    //Các điều kiện để thực hiện nhảy
     private void JumpButton()
     {
         if (climbing)
@@ -159,11 +163,13 @@ public class PlayerMove : MonoBehaviour
         canWallslide = false;
     }
 
+    //code nhảy
     private void Jump()
     {
         rb.velocity = new Vector2(rb.velocity.x, JumpForce);
     }
 
+    //code nhảy tường 
     private void WallJump()
     {
         canMove = false;
@@ -172,6 +178,7 @@ public class PlayerMove : MonoBehaviour
         canWallJump = false;
     }
 
+    //Quay mặt Player
     private void Flip()
     {
         facingRight = !facingRight;
@@ -180,6 +187,7 @@ public class PlayerMove : MonoBehaviour
         transform.localScale = theScale;
     }
 
+    //Xử lí điều khiển quay mặt player
     private void FlipController()
     {
         if (!climbing && isGround && isWallDetected)
@@ -204,16 +212,17 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    //kiểm soát các animator qua code 
     private void AnimatorController()
     {
         bool isMoving = rb.velocity.x != 0;
 
         anim.SetFloat("yVelocity", rb.velocity.y);
-        anim.SetBool("isGrounded", isGround && !climbing); // Ensure grounded only if not climbing
-        anim.SetBool("isMoving", isMoving);
-        anim.SetBool("isWallSliding", isWallSliding);
+        anim.SetBool("isGrounded", isGround && !climbing); // đảm bảo chỉ tiếp đất nếu không leo
+        anim.SetBool("isMoving", isMoving);//set chạy animation
+        anim.SetBool("isWallSliding", isWallSliding);//set sìa tường animation
         anim.SetBool("isClimbing", climbing); // Ensure climbing state is set
-        anim.SetBool("isShoot", isShoot);
+        anim.SetBool("isShoot", isShoot);//set bắn tên animation
     }
 
     private void CollisionCheck()
@@ -235,6 +244,7 @@ public class PlayerMove : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //chạy animation leo thang 
         if (collision.CompareTag("lander"))
         {
             rb.gravityScale = 0;
@@ -247,6 +257,7 @@ public class PlayerMove : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        
         if (collision.CompareTag("lander"))
         {
             rb.gravityScale = gravityScaleAtStart;
