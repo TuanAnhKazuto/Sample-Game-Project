@@ -9,7 +9,6 @@ TagManager:
   - Ground
   - Coin
   - Trap
-  - Ladder
   - Arrow
   layers:
   - Default
