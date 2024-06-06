@@ -185,17 +185,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2487031924308203442, guid: 883085318ab72ef4c8752b92d030a4fe, type: 3}
   m_PrefabInstance: {fileID: 3665946}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4158429 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7275783175366169462, guid: 15abbd0ee0573fc4a96f015842288a18, type: 3}
-  m_PrefabInstance: {fileID: 1635527345}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &12141153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4845,7 +4834,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  healthSlider: {fileID: 4158429}
+  healthSlider: {fileID: 0}
   score: 0
   scoreText: {fileID: 0}
   startingPosition: {fileID: 369074286}
@@ -127197,7 +127186,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1361756899}
-  - component: {fileID: 1361756898}
   - component: {fileID: 1361756900}
   m_Layer: 6
   m_Name: NextStage
@@ -127206,19 +127194,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1361756898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1361756897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa1127f9fc7bbdd4b813348d161c2239, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stageName: Scene2
 --- !u!4 &1361756899
 Transform:
   m_ObjectHideFlags: 0

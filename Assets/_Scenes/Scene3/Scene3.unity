@@ -1330,11 +1330,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6302398675091386728, guid: 2844c4c72c6d21e40ac1d6bbf1a5e10b, type: 3}
   m_PrefabInstance: {fileID: 331978035}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &286254550 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8681032253618074845, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
-  m_PrefabInstance: {fileID: 4475208642055275870}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &331978035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17595,7 +17590,6 @@ GameObject:
   m_Component:
   - component: {fileID: 697800198}
   - component: {fileID: 697800197}
-  - component: {fileID: 697800199}
   - component: {fileID: 697800200}
   m_Layer: 0
   m_Name: Exit Pixelated
@@ -17671,19 +17665,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &697800199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 697800196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa8849ae5b5f15a48ae3b6b7b305a9e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stageName: Scene3
 --- !u!61 &697800200
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34733,39 +34714,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2844c4c72c6d21e40ac1d6bbf1a5e10b, type: 3}
---- !u!114 &1600076408 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7275783175366169462, guid: 15abbd0ee0573fc4a96f015842288a18, type: 3}
-  m_PrefabInstance: {fileID: 339589497}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1644488178 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6338111690692910293, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
   m_PrefabInstance: {fileID: 4475208642055275870}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1644488184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 286254550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a30484fa67781e4099346f572446ee3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  healthSlider: {fileID: 1600076408}
-  score: 0
-  scoreText: {fileID: 0}
-  startingPosition: {fileID: 1141648632}
 --- !u!1001 &1673494962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35511,16 +35464,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7949588120918799609, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
+    - {fileID: 7682545100236746082, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6338111690692910293, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1141648632}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8681032253618074845, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 1644488184}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
 --- !u!1001 &7335983466625218355
 PrefabInstance:

@@ -8,10 +8,10 @@ public class Coin : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
-            if (playerHealth != null)
+            PlayerCollect Collect = other.GetComponent<PlayerCollect>();
+            if (Collect != null)
             {
-                playerHealth.CollectCoin(gameObject);
+                Collect.CollectCoin(gameObject);
             }
         }
     }
