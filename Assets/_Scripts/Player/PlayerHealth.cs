@@ -10,9 +10,13 @@ public class PlayerHealth : MonoBehaviour
     private int currentHealth;
     public Slider healthSlider;  // Để bỏ UI Slider cho thanh máu
 
-    [Header("Scoring Settings")]
+    [Header("Coin Settings")]
     public int score = 0;
     public Text scoreText;  // Để bỏ Ui Text điểm cho đồng xu
+
+    [Header("Gem Settings")]
+    public int Gemscore = 0;
+    public Text GscoreText; // Để bỏ Ui Text điểm cho đá quý
 
     [Header("Player Settings")]
     public Transform startingPosition;
@@ -53,6 +57,10 @@ public class PlayerHealth : MonoBehaviour
         {
             CollectCoin(other.gameObject);
         }
+        if (other.gameObject.CompareTag("Gem"))
+        {
+            CollectGem(other.gameObject);
+        }
     }
 
     private void TakeDamage(int damage)
@@ -71,6 +79,13 @@ public class PlayerHealth : MonoBehaviour
         score += 10; // chỉnh sửa điểm của đồng xu
         UpdateScoreText();
         Destroy(coin); // Destroy đồng xu object
+    }
+
+    public void CollectGem(GameObject gem)
+    {
+        score += 10;
+        UpdateScoreText();
+        Destroy(gem);
     }
 
     private void UpdateScoreText()
