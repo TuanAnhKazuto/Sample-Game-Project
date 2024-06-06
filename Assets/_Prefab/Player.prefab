@@ -137,10 +137,8 @@ GameObject:
   - component: {fileID: 3087058237117960550}
   - component: {fileID: 6761298458119073722}
   - component: {fileID: 7037808160194997065}
-  - component: {fileID: 6860288476407157644}
   - component: {fileID: 2308449748884754983}
   - component: {fileID: 5077858976178212183}
-  - component: {fileID: 8888116654543958140}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -157,7 +155,7 @@ Transform:
   m_GameObject: {fileID: 8681032253618074845}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.176119, y: -2.2890239, z: 0}
+  m_LocalPosition: {x: 6.73, y: -3.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -302,23 +300,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6860288476407157644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8681032253618074845}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c2796c8a725aa94f9182d1e1354e95d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinScore: 0
-  coinScoreText: {fileID: 0}
-  gemScore: 0
-  gemScoreText: {fileID: 0}
-  startingPosition: {fileID: 8455459249220263205}
 --- !u!114 &2308449748884754983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,7 +316,7 @@ MonoBehaviour:
   rb: {fileID: 7037808160194997065}
   _capsuleCollider2D: {fileID: 3087058237117960550}
   MoveSpeed: 5
-  JumpForce: 7
+  JumpForce: 10
   wallJumpDirection: {x: 0, y: 0}
   groundCheck: {fileID: 4893221067764155253}
   groundCheckRadius: 0.29
@@ -359,19 +340,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94381903c3eb18f4db6d18f7eb3de6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  maxHealth: 100
   healthBar: {fileID: 0}
---- !u!114 &8888116654543958140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8681032253618074845}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 472fe21a3a13d5d4e8eb87e7293db1e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  valueText: {fileID: 0}
-  healthFill: {fileID: 0}
