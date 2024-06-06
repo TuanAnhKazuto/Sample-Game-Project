@@ -10,6 +10,7 @@ TagManager:
   - Coin
   - Trap
   - Arrow
+  - Portal
   layers:
   - Default
   - TransparentFX

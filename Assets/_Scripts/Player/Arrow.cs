@@ -43,5 +43,9 @@ public class Arrow : MonoBehaviour
             Destroy(hit.gameObject); // Destroy the enemy
             Destroy(gameObject); // Destroy the arrow
         }
+        if (hit.CompareTag("Ground"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
