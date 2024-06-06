@@ -284,13 +284,13 @@ public class PlayerMove : MonoBehaviour
         int direction = facingRight ? 1 : -1;
         arrow.GetComponent<Rigidbody2D>().velocity = new Vector2(arrowSpeed * direction, 0);
 
-        // Reset isShoot after a short delay
+        // Reset isShoot animation sau 1 thời gian
         StartCoroutine(ResetShoot());
     }
 
     private IEnumerator ResetShoot()
     {
-        yield return new WaitForSeconds(1f); // Adjust the delay as needed
+        yield return new WaitForSeconds(1f); // chỉnh sửa thời gian chờ để tiếp tục chạy lại animation
         isShoot = false;
     }
 }
