@@ -3669,7 +3669,7 @@ Transform:
   m_GameObject: {fileID: 583016612}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.93, y: -0.18000007, z: -10}
+  m_LocalPosition: {x: 55.18, y: 34.11, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -128537,6 +128537,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 583016614}
+    - target: {fileID: 8958632446187162748, guid: 15abbd0ee0573fc4a96f015842288a18, type: 3}
+      propertyPath: m_Name
+      value: DiamondText (TMP)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -128604,6 +128608,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2487031924308203442, guid: 883085318ab72ef4c8752b92d030a4fe, type: 3}
   m_PrefabInstance: {fileID: 1661302190}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1666470448 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8172749882335711737, guid: 15abbd0ee0573fc4a96f015842288a18, type: 3}
+  m_PrefabInstance: {fileID: 1635527345}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f49f86ed35a23df4eaf9845b7512b03d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1691007896 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2487031924308203442, guid: 883085318ab72ef4c8752b92d030a4fe, type: 3}
@@ -129545,7 +129560,7 @@ MonoBehaviour:
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_CameraDistance: 10
-  m_DeadZoneWidth: 0.64
+  m_DeadZoneWidth: 0.08
   m_DeadZoneHeight: 0.02
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
@@ -129952,7 +129967,7 @@ Transform:
   m_GameObject: {fileID: 1859918628}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.93, y: -0.18000007, z: -10}
+  m_LocalPosition: {x: 55.18, y: 34.11, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -132907,17 +132922,21 @@ PrefabInstance:
       propertyPath: coinText
       value: 
       objectReference: {fileID: 988216625}
+    - target: {fileID: 1182733007907998998, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
+      propertyPath: diamondText
+      value: 
+      objectReference: {fileID: 1666470448}
     - target: {fileID: 5077858976178212183, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 323611758}
     - target: {fileID: 6338111690692910293, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.73
+      value: 51.98
       objectReference: {fileID: 0}
     - target: {fileID: 6338111690692910293, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.18
+      value: 31.11
       objectReference: {fileID: 0}
     - target: {fileID: 6338111690692910293, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
       propertyPath: m_LocalPosition.z
