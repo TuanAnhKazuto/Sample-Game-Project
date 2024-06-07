@@ -11,6 +11,7 @@ TagManager:
   - Trap
   - Arrow
   - Portal
+  - Diamond
   layers:
   - Default
   - TransparentFX

@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         curHealth = maxHealth;
 
         healthBar.UpdateBar(curHealth, maxHealth);
@@ -23,6 +24,7 @@ public class PlayerHealth : MonoBehaviour
         if(curHealth <= 0)
         {
             Destroy(this.gameObject);
+            Time.timeScale = 0;
         }
 
         healthBar.UpdateBar(curHealth, maxHealth);
