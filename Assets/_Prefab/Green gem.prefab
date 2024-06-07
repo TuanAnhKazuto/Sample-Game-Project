@@ -14,7 +14,15 @@ GameObject:
   - component: {fileID: 1105300236472474803}
   m_Layer: 0
   m_Name: Green gem
-  m_TagString: Untagged
+<<<<<<< HEAD
+<<<<<<< HEAD
+  m_TagString: Gem
+=======
+  m_TagString: Diamond
+>>>>>>> 7e049ed3264c0ec2846770b20a511f30d6e24fe3
+=======
+  m_TagString: Diamond
+>>>>>>> 7e049ed3264c0ec2846770b20a511f30d6e24fe3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

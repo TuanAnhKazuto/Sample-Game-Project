@@ -13,6 +13,7 @@ public class PlayerMove : MonoBehaviour
     [Header("Move Info")]
     [SerializeField] public float MoveSpeed = 5f;
     [SerializeField] private float JumpForce = 7f;
+    [SerializeField] private float wallSlideSpeed = 2f;
 
     private bool isShoot;
 
@@ -92,10 +93,10 @@ public class PlayerMove : MonoBehaviour
             canWallslide = false;
         }
 
-        if (isWallDetected && canWallslide)
+        if (isWallDetected && canWallslide && rb.velocity.y < 0)
         {
             isWallSliding = true;
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.2f);
+            rb.velocity = new Vector2(rb.velocity.x, -wallSlideSpeed);
         }
         else if (!isWallDetected)
         {
@@ -233,6 +234,10 @@ public class PlayerMove : MonoBehaviour
         if (!isGround && rb.velocity.y < 0)
         {
             canWallslide = true;
+        }
+        else
+        {
+            canWallslide = false;
         }
     }
 
