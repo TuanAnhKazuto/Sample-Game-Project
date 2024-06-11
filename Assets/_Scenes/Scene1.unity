@@ -11996,14 +11996,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 6355064910305304972, guid: 15abbd0ee0573fc4a96f015842288a18, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 239
+      objectReference: {fileID: 0}
+    - target: {fileID: 6355064910305304972, guid: 15abbd0ee0573fc4a96f015842288a18, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -7
+      objectReference: {fileID: 0}
     - target: {fileID: 6910940832500675298, guid: 15abbd0ee0573fc4a96f015842288a18, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1910923237}
-    - target: {fileID: 6910940832500675298, guid: 15abbd0ee0573fc4a96f015842288a18, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -129095615
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
