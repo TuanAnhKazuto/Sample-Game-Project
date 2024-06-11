@@ -41,4 +41,12 @@ public class PlayerHealth : MonoBehaviour
             TakeDamage(50);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Trap")
+        {
+            TakeDamage(20);
+        }
+    }
 }
