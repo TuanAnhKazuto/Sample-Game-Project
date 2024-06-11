@@ -12,6 +12,7 @@ TagManager:
   - Arrow
   - Portal
   - Diamond
+  - NextLevel
   layers:
   - Default
   - TransparentFX
