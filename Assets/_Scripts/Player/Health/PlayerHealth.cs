@@ -6,11 +6,12 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] int maxHealth;
     int curHealth;
-
+    [SerializeField] private GameObject gameOverPanel;
     public HealthBar healthBar;
 
     private void Start()
     {
+        gameOverPanel.SetActive(false);
         Time.timeScale = 1;
         curHealth = maxHealth;
 
@@ -23,6 +24,7 @@ public class PlayerHealth : MonoBehaviour
 
         if(curHealth <= 0)
         {
+            gameOverPanel.SetActive(true);
             Destroy(this.gameObject);
             Time.timeScale = 0;
         }

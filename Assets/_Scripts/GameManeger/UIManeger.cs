@@ -9,6 +9,7 @@ public class UIManeger : MonoBehaviour
 {
     [SerializeField] private GameObject loadingPanel;
     [SerializeField] private GameObject victoryPanel;
+    [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private Slider loadingSlider;
     [SerializeField] private TextMeshProUGUI loadingText;
 
@@ -29,7 +30,15 @@ public class UIManeger : MonoBehaviour
         Time.timeScale = 1.0f;
         victoryPanel.SetActive(false);
         loadingPanel.SetActive(true);
+        gameOverPanel.SetActive(false);
         StartCoroutine(LoadMainMenu());
+    }
+    public void Replay()
+    {
+        Time.timeScale = 1.0f;
+        loadingPanel.SetActive(true);
+        gameOverPanel.SetActive(false);
+        StartCoroutine(LoadReplayLevel());
     }
     IEnumerator LoadNextLevel()
     {
@@ -74,5 +83,25 @@ public class UIManeger : MonoBehaviour
             }
         }
         SceneManager.LoadScene(0);
+    }
+    IEnumerator LoadReplayLevel()
+    {
+        var value = 1f;
+        loadingSlider.value = value;
+        loadingText.text = value + "%";
+
+        while (true)
+        {
+            value++;
+            loadingSlider.value = value;
+            loadingText.text = value + "%";
+            yield return new WaitForSeconds(0.01f);
+            if (value >= 100)
+            {
+                break;
+            }
+        }
+        int curIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(curIndex);
     }
 }
