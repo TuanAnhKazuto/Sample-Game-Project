@@ -46,26 +46,26 @@ public class PlayerCollect : MonoBehaviour
 
     public void CollectCoin(GameObject coin)
     {
-        coinScore += 10;
+        coinScore += 1;
         UpdateCoinScoreText();
         Destroy(coin);
     }
 
     public void CollectGem(GameObject gem)
     {
-        gemScore += 10;
+        gemScore += 1;
         UpdateGemScoreText();
         Destroy(gem);
     }
 
     private void UpdateCoinScoreText()
     {
-        coinScoreText.text = "Coins: " + coinScore;
+        coinScoreText.text = $"<size=58> {coinScore}";
     }
 
     private void UpdateGemScoreText()
     {
-        gemScoreText.text = "Gems: " + gemScore;
+        gemScoreText.text = $"<size=58> {gemScore}";
     }
 
     private void Die()

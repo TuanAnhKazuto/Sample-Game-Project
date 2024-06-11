@@ -132758,10 +132758,27 @@ PrefabInstance:
       propertyPath: coinText
       value: 
       objectReference: {fileID: 988216625}
+<<<<<<< HEAD
+<<<<<<< HEAD
+    - target: {fileID: 2308449748884754983, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
+      propertyPath: wallJumpDirection.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308449748884754983, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
+      propertyPath: wallJumpDirection.y
+      value: 15
+      objectReference: {fileID: 0}
+=======
+=======
+>>>>>>> 7e049ed3264c0ec2846770b20a511f30d6e24fe3
     - target: {fileID: 1182733007907998998, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
       propertyPath: diamondText
       value: 
       objectReference: {fileID: 1666470448}
+<<<<<<< HEAD
+>>>>>>> 7e049ed3264c0ec2846770b20a511f30d6e24fe3
+=======
+>>>>>>> 7e049ed3264c0ec2846770b20a511f30d6e24fe3
     - target: {fileID: 5077858976178212183, guid: ba8a922bbef9392499426b7f226a6574, type: 3}
       propertyPath: healthBar
       value: 
