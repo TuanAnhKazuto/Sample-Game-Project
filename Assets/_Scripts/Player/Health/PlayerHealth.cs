@@ -24,6 +24,7 @@ public class PlayerHealth : MonoBehaviour
 
         if(curHealth <= 0)
         {
+            curHealth = 0;
             gameOverPanel.SetActive(true);
             Destroy(this.gameObject);
             Time.timeScale = 0;
@@ -43,6 +44,10 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.tag == "Trap")
         {
             TakeDamage(25);
+        }
+        if (collision.gameObject.tag == "Water")
+        {
+            TakeDamage(100);
         }
     }
 }
