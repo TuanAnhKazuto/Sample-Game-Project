@@ -3572,6 +3572,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 3015098675738621649, guid: b839aad33ec0b624bb52fd498c70c8b3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6548186374930191003, guid: b839aad33ec0b624bb52fd498c70c8b3, type: 3}
       propertyPath: m_Camera
       value: 
