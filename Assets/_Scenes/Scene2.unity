@@ -1923,24 +1923,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6241922497733729613, guid: 2992271dc8d53664387b549d1870bc41, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 571.87
+      value: 553.51
       objectReference: {fileID: 0}
     - target: {fileID: 6241922497733729613, guid: 2992271dc8d53664387b549d1870bc41, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 297.85
+      value: 195.18
       objectReference: {fileID: 0}
     - target: {fileID: 6241922497733729613, guid: 2992271dc8d53664387b549d1870bc41, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 636.81006
+      value: 636
       objectReference: {fileID: 0}
     - target: {fileID: 6241922497733729613, guid: 2992271dc8d53664387b549d1870bc41, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 361.65002
+      value: 365.45
       objectReference: {fileID: 0}
     - target: {fileID: 7744965822503513284, guid: 2992271dc8d53664387b549d1870bc41, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1986235293}
+    - target: {fileID: 8345556852993634047, guid: 2992271dc8d53664387b549d1870bc41, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 9199586780216865054, guid: 2992271dc8d53664387b549d1870bc41, type: 3}
       propertyPath: m_SizeDelta.x
       value: 553.51
