@@ -15,6 +15,8 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float JumpForce = 7f;
     [SerializeField] private float wallSlideSpeed = 2f;
 
+    [SerializeField] private AudioSource arrowRelease;
+
     private bool isShoot;
 
     private bool climbing;
@@ -283,6 +285,7 @@ public class PlayerMove : MonoBehaviour
     private void ShootButton()
     {
         isShoot = true;
+        arrowRelease.Play();
         GameObject arrow = Instantiate(arrowPrefab, arrowTransform.position, Quaternion.identity);
         Arrow arrowScript = arrow.GetComponent<Arrow>();
         arrowScript.Initialize(facingRight);

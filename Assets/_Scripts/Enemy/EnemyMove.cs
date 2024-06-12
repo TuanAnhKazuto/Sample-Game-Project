@@ -9,6 +9,7 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] private float left;
     [SerializeField] private float right;
     private int moveDiretion = 1;
+    [SerializeField] private AudioSource arrowHit;
 
     private void Update()
     {
@@ -33,6 +34,7 @@ public class EnemyMove : MonoBehaviour
     {
         if (Touch.CompareTag("Arrow"))
         {
+            arrowHit.Play();
             Destroy(this.gameObject);
             Destroy(Touch.gameObject);
         }

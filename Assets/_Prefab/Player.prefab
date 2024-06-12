@@ -267,6 +267,7 @@ MonoBehaviour:
   MoveSpeed: 6
   JumpForce: 10
   wallSlideSpeed: 2
+  arrowRelease: {fileID: 0}
   wallJumpDirection: {x: 5, y: 15}
   groundCheck: {fileID: 1936158094973660495}
   groundCheckRadius: 0.3
@@ -313,6 +314,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinText: {fileID: 0}
   diamondText: {fileID: 0}
+  takeCoinSound: {fileID: 0}
+  takeDiamondSound: {fileID: 0}
 --- !u!114 &8855273116979037428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,7 +329,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  gameOverPanel: {fileID: 0}
   healthBar: {fileID: 0}
+  gameOverSound: {fileID: 0}
+  mainSound: {fileID: 0}
 --- !u!1 &5065397469525511961
 GameObject:
   m_ObjectHideFlags: 0
