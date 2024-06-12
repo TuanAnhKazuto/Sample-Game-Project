@@ -8,7 +8,6 @@ public class BulletBoss : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }
     }

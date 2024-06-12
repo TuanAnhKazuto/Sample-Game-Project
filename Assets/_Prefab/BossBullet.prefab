@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2340521492215986403}
   - component: {fileID: 3468081460819273976}
   - component: {fileID: 7515136489868760567}
-  - component: {fileID: 7794016472539521449}
   - component: {fileID: -1277064592443897818}
   m_Layer: 0
   m_Name: BossBullet
@@ -135,19 +134,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.032694586, y: -0.01634839}
   m_Size: {x: 1.1691339, y: 0.37881422}
   m_Direction: 1
---- !u!114 &7794016472539521449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7287260346987148074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e23c2b313d2471d409d3f6612666b779, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arrowSpeed: 25
 --- !u!50 &-1277064592443897818
 Rigidbody2D:
   serializedVersion: 4

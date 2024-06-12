@@ -28,7 +28,6 @@ public class PlayerHealth : MonoBehaviour
             Destroy(this.gameObject);
             Time.timeScale = 0;
         }
-
         healthBar.UpdateBar(curHealth, maxHealth);
     }
 

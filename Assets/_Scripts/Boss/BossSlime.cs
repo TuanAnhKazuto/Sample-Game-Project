@@ -25,11 +25,11 @@ public class BossSlime : MonoBehaviour
         {
             moveSpeed = 0;
             jumpHight = 0;
-            
+
             BossAttack();
-            
+
         }
-        if(hpBoss.value <= 0)
+        if (hpBoss.value <= 0)
         {
             Destroy(gameObject);
         }
@@ -37,23 +37,37 @@ public class BossSlime : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Arrow")
+        if (collision.gameObject.tag == "Arrow")
         {
             hpBoss.value -= 10;
         }
-        
+
     }
 
     public void BossMove()
     {
         transform.Translate(Vector2.up * moveSpeed * Time.deltaTime);
         transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
-        
+
     }
 
     public void BossAttack()
     {
         GameObject bullet = Instantiate(bulletPrefab, bulletTransform.position, Quaternion.identity);
         bullet.GetComponent<Rigidbody2D>().velocity = bulletTransform.right * bullletSpeed * -1;
+    }
+
+    IEnumerator LoadMainMenu()
+    {
+        var value = 1f;
+        while (true)
+        {
+            value++;
+            yield return new WaitForSeconds(0.01f);
+            if (value >= 100)
+            {
+                break;
+            }
+        }
     }
 }

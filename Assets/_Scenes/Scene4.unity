@@ -130446,7 +130446,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7287260346987148074, guid: aaaaa0526ff41564192ce4c05d0b51b3, type: 3}
   bullletSpeed: 1
   moveSpeed: 4
-  jumpHight: 6
+  jumpHight: 0
   posLeft: 53.87
   hpBoss: {fileID: 1688878109}
 --- !u!95 &1877830107
