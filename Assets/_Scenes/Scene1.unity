@@ -96645,10 +96645,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: MiniMap
       objectReference: {fileID: 0}
+    - target: {fileID: 6241922497733729613, guid: 2992271dc8d53664387b549d1870bc41, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 389.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 6241922497733729613, guid: 2992271dc8d53664387b549d1870bc41, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 293.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 6241922497733729613, guid: 2992271dc8d53664387b549d1870bc41, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 721.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6241922497733729613, guid: 2992271dc8d53664387b549d1870bc41, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 355.87
+      objectReference: {fileID: 0}
     - target: {fileID: 7744965822503513284, guid: 2992271dc8d53664387b549d1870bc41, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1910923237}
+    - target: {fileID: 8345556852993634047, guid: 2992271dc8d53664387b549d1870bc41, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
