@@ -42,6 +42,10 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeDamage(20);
         }
+        if(collision.gameObject.tag == "Boss")
+        {
+            TakeDamage(50);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -52,6 +56,11 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.tag == "Water")
         {
             TakeDamage(100);
+        }
+        if(collision.gameObject.tag == "BulletBoss")
+        {
+            TakeDamage(15);
+            Destroy(collision.gameObject);
         }
     }
 }
