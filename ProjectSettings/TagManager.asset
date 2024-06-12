@@ -11,6 +11,7 @@ TagManager:
   - Ground
   - Coin
   - Water
+  - Diamond
   layers:
   - Default
   - TransparentFX

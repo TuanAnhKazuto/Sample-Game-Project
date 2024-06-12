@@ -9,6 +9,8 @@ public class TakePoint : MonoBehaviour
 
     public CoinText coinText;
     public DiamondText diamondText;
+    [SerializeField] private AudioSource takeCoinSound;
+    [SerializeField] public AudioSource takeDiamondSound;
 
     private void Start()
     {
@@ -35,11 +37,13 @@ public class TakePoint : MonoBehaviour
     {
         if(other.gameObject.tag == "Coin")
         {
+            takeCoinSound.Play();
             Take_Coin(1);
             Destroy(other.gameObject);
         }
         if(other.gameObject.tag == "Diamond")
         {
+            takeDiamondSound.Play();
             TakeDiamond(1);
             Destroy(other.gameObject);
         }
