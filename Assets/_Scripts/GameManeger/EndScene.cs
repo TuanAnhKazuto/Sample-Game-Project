@@ -6,7 +6,7 @@ public class EndScene : MonoBehaviour
 {
     [SerializeField] private GameObject victoryPanel;
     [SerializeField] private AudioSource victoryAudioSource;
-    [SerializeField] private AudioSource wordSound;
+    [SerializeField] private AudioSource mainSound;
 
     private void Start()
     {
@@ -19,7 +19,7 @@ public class EndScene : MonoBehaviour
         {
             Time.timeScale = 0;
             victoryAudioSource.Play();
-            wordSound.Stop();
+            mainSound.Stop();
             victoryPanel.SetActive(true);
         }
     }

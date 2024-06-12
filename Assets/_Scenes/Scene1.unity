@@ -96439,6 +96439,10 @@ PrefabInstance:
       value: Exit Pixelated
       objectReference: {fileID: 0}
     - target: {fileID: 8423726601231325681, guid: 536f3caf7342b6d468f010479a6601d0, type: 3}
+      propertyPath: mainSound
+      value: 
+      objectReference: {fileID: 158687928}
+    - target: {fileID: 8423726601231325681, guid: 536f3caf7342b6d468f010479a6601d0, type: 3}
       propertyPath: wordSound
       value: 
       objectReference: {fileID: 158687928}
@@ -96463,21 +96467,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 448146945740406144, guid: 8b2e8bf239c42e8458c182f793f8cc28, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2200331851674236304, guid: 8b2e8bf239c42e8458c182f793f8cc28, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5913811527744381219, guid: 8b2e8bf239c42e8458c182f793f8cc28, type: 3}
       propertyPath: m_Name
       value: AudioManeger
-      objectReference: {fileID: 0}
-    - target: {fileID: 5987790668610966760, guid: 8b2e8bf239c42e8458c182f793f8cc28, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6594519704439707277, guid: 8b2e8bf239c42e8458c182f793f8cc28, type: 3}
       propertyPath: m_LocalPosition.x
