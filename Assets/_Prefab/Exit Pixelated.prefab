@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   victoryPanel: {fileID: 0}
+  victoryAudioSource: {fileID: 0}
 --- !u!61 &5733435447410708935
 BoxCollider2D:
   m_ObjectHideFlags: 0

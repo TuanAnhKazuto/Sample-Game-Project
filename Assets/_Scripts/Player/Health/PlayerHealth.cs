@@ -8,6 +8,8 @@ public class PlayerHealth : MonoBehaviour
     int curHealth;
     [SerializeField] private GameObject gameOverPanel;
     public HealthBar healthBar;
+    [SerializeField] private AudioSource gameOverSound;
+    [SerializeField] private AudioSource mainSound;
 
     private void Start()
     {
@@ -25,6 +27,8 @@ public class PlayerHealth : MonoBehaviour
         if(curHealth <= 0)
         {
             curHealth = 0;
+            mainSound.Stop();
+            gameOverSound.Play();
             gameOverPanel.SetActive(true);
             Destroy(this.gameObject);
             Time.timeScale = 0;

@@ -5,6 +5,8 @@ using UnityEngine;
 public class EndScene : MonoBehaviour
 {
     [SerializeField] private GameObject victoryPanel;
+    [SerializeField] private AudioSource victoryAudioSource;
+    [SerializeField] private AudioSource wordSound;
 
     private void Start()
     {
@@ -16,6 +18,8 @@ public class EndScene : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             Time.timeScale = 0;
+            victoryAudioSource.Play();
+            wordSound.Stop();
             victoryPanel.SetActive(true);
         }
     }

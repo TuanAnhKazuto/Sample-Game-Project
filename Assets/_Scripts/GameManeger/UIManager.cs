@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class UIManeger : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject loadingPanel;
     [SerializeField] private GameObject victoryPanel;
@@ -39,6 +39,10 @@ public class UIManeger : MonoBehaviour
         loadingPanel.SetActive(true);
         gameOverPanel.SetActive(false);
         StartCoroutine(LoadReplayLevel());
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
     }
     IEnumerator LoadNextLevel()
     {
