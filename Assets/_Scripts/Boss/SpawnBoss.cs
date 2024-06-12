@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class SpawnBoss : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject bossCome;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        bossCome.SetActive(false);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            bossCome.SetActive(true);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            bossCome.SetActive(true);
+            Destroy(this.gameObject);
+        }
     }
 }

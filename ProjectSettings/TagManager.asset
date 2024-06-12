@@ -12,6 +12,8 @@ TagManager:
   - Coin
   - Water
   - Diamond
+  - Boss
+  - BulletBoss
   layers:
   - Default
   - TransparentFX

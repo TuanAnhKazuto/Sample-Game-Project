@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class BulletBoss : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D collision)
+    void Start()
     {
-        if (collision.gameObject.tag == "Player")
+        Destroy(this.gameObject, 5); 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Arrow")
         {
             Destroy(this.gameObject);
+            Destroy(collision.gameObject);
         }
     }
 }
