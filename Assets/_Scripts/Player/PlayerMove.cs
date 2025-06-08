@@ -78,7 +78,7 @@ public class PlayerMove : MonoBehaviour
         {
             var horizontalInput = Input.GetAxisRaw("Horizontal");
             var verticalInput = Input.GetAxisRaw("Vertical");
-            rb.velocity = new Vector2(horizontalInput * MoveSpeed, verticalInput * MoveSpeed);
+            rb.linearVelocity = new Vector2(horizontalInput * MoveSpeed, verticalInput * MoveSpeed);
             return;
         }
 
@@ -95,10 +95,10 @@ public class PlayerMove : MonoBehaviour
             canWallslide = false;
         }
 
-        if (isWallDetected && canWallslide && rb.velocity.y < 0)
+        if (isWallDetected && canWallslide && rb.linearVelocity.y < 0)
         {
             isWallSliding = true;
-            rb.velocity = new Vector2(rb.velocity.x, -wallSlideSpeed);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, -wallSlideSpeed);
         }
         else if (!isWallDetected)
         {
@@ -135,7 +135,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (canMove)
         {
-            rb.velocity = new Vector2(MovingInput * MoveSpeed, rb.velocity.y);
+            rb.linearVelocity = new Vector2(MovingInput * MoveSpeed, rb.linearVelocity.y);
         }
     }
 
@@ -169,7 +169,7 @@ public class PlayerMove : MonoBehaviour
     //code nhảy
     private void Jump()
     {
-        rb.velocity = new Vector2(rb.velocity.x, JumpForce);
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, JumpForce);
     }
 
     //code nhảy tường 
@@ -218,9 +218,9 @@ public class PlayerMove : MonoBehaviour
     //kiểm soát các animator qua code 
     private void AnimatorController()
     {
-        bool isMoving = rb.velocity.x != 0;
+        bool isMoving = rb.linearVelocity.x != 0;
 
-        anim.SetFloat("yVelocity", rb.velocity.y);
+        anim.SetFloat("yVelocity", rb.linearVelocity.y);
         anim.SetBool("isGrounded", isGround && !climbing); // đảm bảo chỉ tiếp đất nếu không leo
         anim.SetBool("isMoving", isMoving);//set chạy animation
         anim.SetBool("isWallSliding", isWallSliding);//set sìa tường animation
@@ -233,7 +233,7 @@ public class PlayerMove : MonoBehaviour
         isGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, WhatIsGround) && !climbing; // Ensure not grounded if climbing
         isWallDetected = Physics2D.Raycast(wallCheck.position, Vector2.right * facingDirection, wallCheckDistance, WhatIsGround);
 
-        if (!isGround && rb.velocity.y < 0)
+        if (!isGround && rb.linearVelocity.y < 0)
         {
             canWallslide = true;
         }
@@ -255,7 +255,7 @@ public class PlayerMove : MonoBehaviour
         if (collision.CompareTag("lander"))
         {
             rb.gravityScale = 0;
-            rb.velocity = Vector2.zero;  // Stop any existing momentum
+            rb.linearVelocity = Vector2.zero;  // Stop any existing momentum
             climbing = true;
             anim.SetBool("isClimbing", true);
             anim.SetBool("isGrounded", false);  // Prevent grounded animations
@@ -279,7 +279,7 @@ public class PlayerMove : MonoBehaviour
         {
             var leothang = Input.GetAxisRaw("Horizontal");
             var leothang2 = Input.GetAxisRaw("Vertical");
-            rb.velocity = new Vector3(leothang * 1f, leothang2 * 3f, 0);
+            rb.linearVelocity = new Vector3(leothang * 1f, leothang2 * 3f, 0);
         }
     }
     private void ShootButton()
@@ -290,7 +290,7 @@ public class PlayerMove : MonoBehaviour
         Arrow arrowScript = arrow.GetComponent<Arrow>();
         arrowScript.Initialize(facingRight);
         int direction = facingRight ? 1 : -1;
-        arrow.GetComponent<Rigidbody2D>().velocity = new Vector2(arrowSpeed * direction, 0);
+        arrow.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(arrowSpeed * direction, 0);
 
         // Reset isShoot animation sau 1 thời gian
         StartCoroutine(ResetShoot());
