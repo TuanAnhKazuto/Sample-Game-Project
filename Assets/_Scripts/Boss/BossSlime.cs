@@ -58,7 +58,7 @@ public class BossSlime : MonoBehaviour
     public void BossAttack()
     {
         GameObject bullet = Instantiate(bulletPrefab, bulletTransform.position, Quaternion.identity);
-        bullet.GetComponent<Rigidbody2D>().velocity = bulletTransform.right * bullletSpeed * -1;
+        bullet.GetComponent<Rigidbody2D>().linearVelocity = bulletTransform.right * bullletSpeed * -1;
     }
     private IEnumerator BossAttackRoutine()
     {
